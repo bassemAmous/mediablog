@@ -1,6 +1,6 @@
 
-import axios from 'axios';
 
+import axios from 'axios';
 export default{
 state: {
      loadedUsers: [],
@@ -13,12 +13,11 @@ mutations: {
     setLoadedUser (state, payload) {
       state.loadedUser = payload
     },
-
 },
 actions: {
   async  loadedUsers ({commit}) {
              try{
-              commit('setLoading', true)
+               commit('setLoading', true)
       const response = await axios.get('https://jsonplaceholder.typicode.com/users')
       const posts = response.data
           commit('setLoadedUsers', posts)
@@ -26,7 +25,7 @@ actions: {
        }
        catch(error){
               commit('setLoading', false)
-       } 
+       }
   },
     async  loadedUser ({commit},id) {
              try{
@@ -38,7 +37,7 @@ actions: {
        }
        catch(error){
               commit('setLoading', false)
-       } 
+       }
   }
 },
 getters: {
@@ -48,6 +47,6 @@ return state.loadedUsers;
 loadedUser(state){
 return state.loadedUser;
 }
-  
 }
 }
+

@@ -9,17 +9,14 @@ state: {
 },
 mutations: {
     setLoadedPosts (state, payload) {
-      
       state.loadedPosts = payload
     },
     setLoadedPostDetail (state, payload) {
-      
       state.loadedPostDetail = payload
     },
     setLoadedPostComments (state, payload) {
       state.postComments = payload
-    },
-   
+    }
 },
 actions: {
   async  loadedPosts ({commit}) {
@@ -32,7 +29,7 @@ actions: {
        }
        catch(error){
               commit('setLoading', false)
-       } 
+       }
   },
    async  loadedPostDetail ({commit},id) {
       try{
@@ -44,7 +41,7 @@ actions: {
        }
        catch(error){
               commit('setLoading', false)
-       } 
+       }
   },
    async  loadedPostComments ({commit},id) {
       try{
@@ -56,10 +53,10 @@ actions: {
        }
        catch(error){
               commit('setLoading', false)
-       } 
+       }
   },
 
-  
+
 },
 getters: {
 loadedPosts(state){
@@ -69,9 +66,9 @@ loadedPostDetail(state){
 return state.loadedPostDetail;
 },
 loadedPostComments(state){
-  
+
 return state.postComments;
 }
-  
+
 }
 }

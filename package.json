@@ -5,12 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "node_modules/.bin/jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.15.0",
     "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
     "firebase": "^5.5.1",
+    "inject-loader": "^4.0.1",
     "jest": "^23.6.0",
     "jest-serializer-vue": "^2.0.2",
     "stylus": "^0.54.5",
@@ -18,6 +22,7 @@
     "vue": "^2.5.17",
     "vue-jest": "^2.6.0",
     "vue-router": "^3.0.1",
+    "vue-test-utils": "^1.0.0-beta.11",
     "vuetify": "^1.0.19",
     "vuex": "^3.0.1"
   },
@@ -28,6 +33,8 @@
     "@vue/cli-service": "^3.0.3",
     "@vue/test-utils": "^1.0.0-beta.25",
     "babel-plugin-istanbul": "^5.0.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "expect": "^23.6.0",
     "jsdom": "^12.0.0",
     "jsdom-global": "^3.0.2",
@@ -76,6 +83,19 @@
     },
     "snapshotSerializers": [
       "<rootDir>/node_modules/jest-serializer-vue"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "test/**/*.js",
+      "**/src/**"
+    ],
+    "coverageDirectory": "<rootDir>/src/converageReport",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules"
     ]
   },
   "babel": {

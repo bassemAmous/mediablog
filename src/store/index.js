@@ -12,6 +12,5 @@ modules:{
   user: user,
   other: other
 }
-
 }
 )

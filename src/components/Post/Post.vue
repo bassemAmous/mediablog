@@ -27,10 +27,12 @@
     <v-data-table v-if="!loading"
             :headers="headers"
             :items="posts"
-            :search="search" 
+            :search="search"
+
+                  @click="detailMethod( 1,1)"
     >
-      <template slot="items" slot-scope="props">
-        <td @click="detailMethod( props.item.id,props.item.userId)"  style="cursor: pointer;" ><h4>{{ props.item.title }}</h4></td>
+      <template slot="items" slot-scope="props" id="mm">
+        <td id="cc"  @click="detailMethod( props.item.id,props.item.userId)"  style="cursor: pointer;" class="click"><h4>{{ props.item.title }}</h4></td>
         <td  @click="detailMethod( props.item.id,props.item.userId)"  style="cursor: pointer;" class="text-xs-right">{{ props.item.body }}</td>
       </template>
       <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -63,9 +65,7 @@
       },
         },
         methods: {
-            
-     
-    detailMethod(postId,userId){
+          detailMethod(postId,userId){
     this.$store.dispatch('loadedPostDetail',postId)
     this.$store.dispatch('loadedPostComments',postId)
     this.$store.dispatch('loadedUser',userId)
