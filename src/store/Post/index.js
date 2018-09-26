@@ -23,6 +23,7 @@ actions: {
       try{
       commit('setLoading', true)
       const response = await axios.get('http://jsonplaceholder.typicode.com/posts')
+
       const posts = response.data
       commit('setLoadedPosts', posts)
       commit('setLoading', false)

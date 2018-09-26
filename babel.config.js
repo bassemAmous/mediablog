@@ -1,14 +1,16 @@
 module.exports = {
+
   "presets": [
-    ["env", {
-      "modules": false
-    }],
-    "stage-2"
-  ],
+  ["es2015", { "modules": false }],
+  "stage-2"
+],
+  "plugins": ["transform-runtime"],
+  "comments": false,
   "env": {
-    "test": {
-      "presets": ["env", "stage-2"]
-    }
-  },
-  "plugins": ["transform-runtime"]
+  "test": {
+    "plugins": [ "istanbul" ],
+      "presets": [ ["es2015"] ]
+  }
 }
+}
+
