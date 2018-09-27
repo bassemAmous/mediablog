@@ -2,13 +2,19 @@
 import axios from 'axios';
 
 import credential from '../../credential/appCredentials'
-
+ /**
+   * @vue-data {Object} rowsPerPageItems- it's about the row per page
+   * @vue-data {array} pagination- paginatio,
+   * @vue-computed {array} user- it's about displaying all the users
+   * @vue-computed {boolean} loading- boolean
+   */
 export default {
 state: {
      loadedPosts: [],
      loadedPostDetail: {},
      postComments: []
 },
+//mutate  setLoadedPosts, setLoadedPostDetail, setLoadedPostComments
 mutations: {
     setLoadedPosts (state, payload) {
       state.loadedPosts = payload
@@ -20,6 +26,7 @@ mutations: {
       state.postComments = payload
     }
 },
+// call the actions  loadedPosts loadedPostDetail loadedPostComments
 actions: {
   async  loadedPosts ({commit}) {
       try{
