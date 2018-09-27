@@ -1,6 +1,8 @@
 
 
 import axios from 'axios';
+import credential from '../../credential/appCredentials'
+
 export default{
 state: {
      loadedUsers: [],
@@ -18,7 +20,7 @@ actions: {
   async  loadedUsers ({commit}) {
              try{
                commit('setLoading', true)
-      const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+      const response = await axios.get(credential.usersUrl)
       const posts = response.data
           commit('setLoadedUsers', posts)
           commit('setLoading', false)
@@ -30,7 +32,7 @@ actions: {
     async  loadedUser ({commit},id) {
              try{
               commit('setLoading', true)
-      const response = await axios.get('https://jsonplaceholder.typicode.com/users/'+id)
+      const response = await axios.get(credential.usersUrl+id)
       const user = response.data
           commit('setLoadedUser', user)
           commit('setLoading', false)

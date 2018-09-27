@@ -11,7 +11,6 @@ export const testAction = (
   let commit = (type, payload) => {
     let mutation = expectedMutations[count];
     try {
-      console.log(actionPayload)
       // check if commit function is invoked with expected args
       expect(mutation.type).to.equal(type);
       if (payload) {

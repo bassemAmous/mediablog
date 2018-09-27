@@ -3,10 +3,12 @@ import MockAdapter from "axios-mock-adapter";
 let mock = new MockAdapter(axios);
 import { testAction } from "./testUtils";
 import User from '../../index';
+import credential from '../../../../credential/appCredentials'
+
 describe('User Actions', () => {
  it("get Users", done => {
   const response = {};
-  mock.onGet("https://jsonplaceholder.typicode.com/users").reply(200, response);
+  mock.onGet().reply(200, response);
   const actionPayload = null;
   const state = null;
   const expectedMutations = [
@@ -27,7 +29,7 @@ describe('User Actions', () => {
 });
 it("get User", done => {
   const response = {};
-  mock.onGet("https://jsonplaceholder.typicode.com/users/1").reply(200, response);
+  mock.onGet(credential.usersUrl+credential.id).reply(200, response);
   const actionPayload = 1;
   const state = null;
   const expectedMutations = [
