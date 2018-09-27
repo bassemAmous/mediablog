@@ -63,6 +63,12 @@
     </v-container>
 </template>
 <script>
+
+  /**
+   * 
+   * @vue-data {array}  rowPer items
+   * @vue-data {object} row per page
+   */
     export default {
         data: () => ({
             rowsPerPageItems: [4, 8, 12],

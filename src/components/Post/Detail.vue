@@ -52,6 +52,13 @@
 </template>
 
 <script>
+
+  /**
+   * @vue-computed-postDetail {Object} post detail
+   * @vue-computed-comments {array} array comments
+   * @vue-computed-user {Object} user detail
+   * @vue-computed-loading {boolean} boolean
+   */
     export default {
            computed: {
             postDetail(){
