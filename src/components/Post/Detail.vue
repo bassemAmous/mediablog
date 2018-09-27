@@ -54,10 +54,10 @@
 <script>
 
   /**
-   * @vue-computed-postDetail {Object} post detail
-   * @vue-computed-comments {array} array comments
-   * @vue-computed-user {Object} user detail
-   * @vue-computed-loading {boolean} boolean
+   * @vue-computed {Object} postDetail- post detail
+   * @vue-computed {array} comments- array comments
+   * @vue-computed {Object} useruser- detail
+   * @vue-computed {boolean} loading- boolean
    */
     export default {
            computed: {

@@ -65,9 +65,10 @@
 <script>
 
   /**
-   * 
-   * @vue-data {array}  rowPer items
-   * @vue-data {object} row per page
+   * @vue-data {Object} rowsPerPageItems- it's about the row per page
+   * @vue-data {array} pagination- paginatio,
+   * @vue-computed {array} user- it's about displaying all the users
+   * @vue-computed {boolean} loading- boolean
    */
     export default {
         data: () => ({
