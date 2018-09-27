@@ -12,11 +12,11 @@
       <v-flex xs12>
         <v-carousel>
           <v-carousel-item
-                  v-for="meetup in meetups"
-                  :src="meetup.imageUrl"
-                  :key="meetup.id">
+                  v-for="blog in blogs"
+                  :src="blog.imageUrl"
+                  :key="blog.id">
             <div class="title">
-              {{ meetup.title }}
+              {{ blog.title }}
             </div>
           </v-carousel-item>
         </v-carousel>
@@ -31,10 +31,13 @@
 </template>
 
 <script>
+ /**
+   * @vue-data {array} blogs- array of images that they will be display on this dashbord,
+   */
     export default {
         data () {
             return {
-                meetups: [
+                blogs: [
                     { imageUrl: 'http://cybernob.com/wp-content/uploads/2017/02/blog-designing-kerala.png', id: 'afajfjadfaadfa323', title: 'UX, social media, content, writing...' },
                     { imageUrl: 'https://www.jbklutse.com/wp-content/uploads/2017/12/blogging.jpg', id: 'aadsfhbkhlk1241', title: 'posts comments creativity...' }
                 ]

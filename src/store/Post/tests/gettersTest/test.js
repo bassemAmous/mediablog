@@ -3,7 +3,10 @@ import Post from '../../index';
 import { loadedPosts } from '../dataTest/postData/postsData.json';
 import { loadedPostDetail } from '../dataTest/postData/postDetailsData.json';
 import { postComments } from '../dataTest/postData/postCommentsData.json';
-
+       /**
+        * @vue
+   * getters {string} search- it's about the reasearch concerning the array of posts
+   */
 describe('getters tests', () => {
   const state = {
     loadedPosts,
