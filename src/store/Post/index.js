@@ -2,12 +2,7 @@
 import axios from 'axios';
 
 import credential from '../../credential/appCredentials'
- /**
-   * @vue-data {Object} rowsPerPageItems- it's about the row per page
-   * @vue-data {array} pagination- paginatio,
-   * @vue-computed {array} user- it's about displaying all the users
-   * @vue-computed {boolean} loading- boolean
-   */
+
 export default {
 state: {
      loadedPosts: [],
